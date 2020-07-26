@@ -1,0 +1,60 @@
+CAL(1)                         MCS-284 Commands Manual                     CAL(1)
+
+NAME
+     cal - displays a calendar
+
+SYNOPSIS
+     cal [-rgbpco] [[month] year]
+     cal [-rgbpco] -m month [year]
+
+DESCRIPTION
+     The cal utility displays a simple calendar in traditional format.
+
+     The options are as follows:
+
+     -m month
+             Display the specified month.
+     -r
+             Color the output red
+     -g
+             Color the output green
+     -b
+             Color the output blue
+     -p
+             Color the output pink
+     -c
+             Color the output cyan
+     -o
+             Color the output orange
+
+
+     A single parameter specifies the year (1-9999) to be displayed; note the
+     year must be fully specified: "cal 89" will not display a calendar for 1989.
+     Two parameters denote the month and year; the month is either a number
+     between 1 and 12, or a full or abbreviated name as specified by the current
+     locale.  Month and year default to those of the current system clock and
+     time zone (so "cal -m 8" will display a calendar for the month of August in
+     the current year). A month can be represented by the first 3 letters of its
+     name, either capital or lowercase, or the full spelling of its name, or just
+     by its number.
+
+     A year starts on January 1.
+
+SEE ALSO
+     calendar(3), strftime(3)
+
+HISTORY
+     A cal command appeared in Version 5 AT&T UNIX and later in BSD UNIX.
+     The output of the cal command is supposed to be bit for bit compatible to
+     the original Unix cal command, because its output is processed by other
+     programs like CGI scripts, that should not be broken. Therefore it will
+     always output 8 lines, even if only 7 contain data. This extra blank
+     line also appears with the original cal command, at least on Solaris 8
+
+AUTHORS
+     fbelik@gustavus.edu
+
+BUGS
+     This program can only perform a subset of the Linux cal program.
+
+MCS-284                           Sep 19, 2019                           MCS-284
